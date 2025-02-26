@@ -9,5 +9,5 @@
 body{
     font-family: "Barlow", serif;
     margin: 0 auto;
-
+    @apply bg-blue-950
 }
