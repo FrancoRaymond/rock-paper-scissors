@@ -35,19 +35,19 @@ const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.5 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="steptwo flex gap-5 items-center"
+      className="steptwo flex gap-5"
     >
       <div className="flex flex-col-reverse md:flex-col gap-5 items-center">
         <h1 className="text-gray-300 text-l md:text-xl font-semibold">YOU PICKED</h1>
         {renderChoice(choice)}
       </div>
-      <div className="flex flex-col gap-5 items-center">
+      <div className="flex flex-col gap-5 justify-center">
         
         {!computerChoice ? (
           <motion.div
-            className="w-28 h-28 rounded-full bg-gray-300"
+            className="computerChoiceLoader w-28 h-28 rounded-full bg-gray-300"
             animate={{
-              scale: [1, 1.3, 1],
+              scale: [1, 0.5, 1],
               opacity: [0.7, 1, 0.7],
             }}
             transition={{

@@ -25,3 +25,16 @@ body{
 .steptwo{
     margin-top: 2rem;
 }
+.computerChoiceLoader{
+    margin-left: 3rem;
+}
+.rulesContainer{
+    padding: 1.5rem;
+}
+.rulesContainer h2{
+    margin-bottom: 2rem;
+}
+.rulesBtn{
+    padding: 0.3rem 2rem;
+    margin-top: 2rem;
+}
