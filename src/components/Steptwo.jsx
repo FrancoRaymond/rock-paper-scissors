@@ -3,8 +3,19 @@ import { motion } from "framer-motion";
 import Rock from "./Rock";
 import Paper from "./Paper";
 import Scissors from "./Scissors";
+import Results from "./Results";
 
-const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
+const Steptwo = (
+  { 
+    choice, 
+    computerChoice, 
+    setComputerChoice, 
+    gameOver, 
+    setGameOver, 
+    setChoice, 
+    outcome, 
+    setOutcome
+  }) => {
   const options = ["rock", "paper", "scissors"];
 
   useEffect(() => {
@@ -40,12 +51,26 @@ const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.5 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="steptwo flex gap-5"
+      className="steptwo flex gap-5 md:gap-16 items-center"
     >
       <div className="flex flex-col-reverse md:flex-col gap-5 items-center">
         <h1 className="text-gray-300 text-l md:text-xl font-semibold text-center">YOU PICKED</h1>
         {renderChoice(choice)}
       </div>
+      {gameOver && (
+        <div className="hidden md:flex">
+          <Results 
+            outcome={outcome} 
+            setOutcome={setOutcome} 
+            choice={choice} 
+            setChoice={setChoice} 
+            computerChoice={computerChoice} 
+            setComputerChoice={setComputerChoice}
+            setGameOver={setGameOver} 
+          />
+        </div>
+        
+      )}
       <div className="flex flex-col gap-5 justify-center">
         
         {!computerChoice ? (

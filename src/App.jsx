@@ -37,7 +37,7 @@ function App() {
 
       setTimeout(() => {
         setGameOver(true);
-      }, 500);
+      }, 200);
     };
 
     checkWinner();
@@ -46,14 +46,27 @@ function App() {
   return (
     <div className='flex flex-col items-center w-full min-h-screen'>
       <Header score={score} />
+
       {choice === '' ? 
         <Stepone setChoice={setChoice}/> : 
-        <Steptwo choice={choice} computerChoice={computerChoice} setComputerChoice={setComputerChoice} />
+        <Steptwo 
+          gameOver={gameOver} 
+          choice={choice} 
+          computerChoice={computerChoice} 
+          setComputerChoice={setComputerChoice} 
+          outcome={outcome}
+          setOutcome={setOutcome}
+          setChoice={setChoice}
+          setGameOver={setGameOver}
+        />
       }
       {rules && <Rules setRules={setRules} />}
+
       <div className="flex-grow"></div>
+
       {gameOver && (
-        <Results 
+        <div className='md:hidden'>
+          <Results 
           outcome={outcome} 
           setOutcome={setOutcome} 
           choice={choice} 
@@ -62,6 +75,7 @@ function App() {
           setComputerChoice={setComputerChoice}
           setGameOver={setGameOver} 
         />
+        </div>  
       )}
       <button 
         onClick={() => setRules(true)}

@@ -21,7 +21,7 @@ const Results = ({setChoice, setComputerChoice, outcome, setOutcome, setGameOver
       <h1 className='text-3xl font-bold text-white sm:text-5xl'>{outcome}</h1>
       <button
         onClick={handleRestart} 
-        className='playAgainBtn rounded-md cursor-pointer bg-white text-blue-950'
+        className='playAgainBtn rounded-md cursor-pointer bg-white text-blue-950 hover:text-red-600 transition-all duration-300'
       >
         PLAY AGAIN
       </button>
