@@ -44,7 +44,7 @@ function App() {
   }, [choice, computerChoice]); 
 
   return (
-    <div className='flex flex-col items-center w-full min-h-screen'>
+    <div className='main flex flex-col items-center w-full min-h-screen'>
       <Header score={score} />
 
       {choice === '' ? 
