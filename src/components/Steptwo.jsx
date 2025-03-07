@@ -15,6 +15,11 @@ const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
 
     return () => clearTimeout(timer);
   }, [choice]);
+  
+  useEffect(() => {
+    if (computerChoice) {
+    }
+  }, [computerChoice]);
 
   const renderChoice = (selectedChoice) => {
     switch (selectedChoice) {
@@ -38,7 +43,7 @@ const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
       className="steptwo flex gap-5"
     >
       <div className="flex flex-col-reverse md:flex-col gap-5 items-center">
-        <h1 className="text-gray-300 text-l md:text-xl font-semibold">YOU PICKED</h1>
+        <h1 className="text-gray-300 text-l md:text-xl font-semibold text-center">YOU PICKED</h1>
         {renderChoice(choice)}
       </div>
       <div className="flex flex-col gap-5 justify-center">
@@ -63,7 +68,7 @@ const Steptwo = ({ choice, computerChoice, setComputerChoice }) => {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex flex-col-reverse md:flex-col gap-5 items-center"
           >
-            <h1 className="text-gray-300 text-l md:text-xl font-semibold">THE HOUSE PICKED</h1>
+            <h1 className="text-gray-300 text-l md:text-xl font-semibold text-center">THE HOUSE PICKED</h1>
             {renderChoice(computerChoice)}
           </motion.div>
         )}
